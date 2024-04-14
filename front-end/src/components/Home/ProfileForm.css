@@ -74,3 +74,12 @@
     width: 8vw;
     margin-left: 2vh;
  }
+
+ .functionAreas{
+  display: flex;
+  flex-direction: row;
+  
+ }
+ .farea{
+  margin-left: 2vh;
+ }

@@ -17,8 +17,9 @@ app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 
 app.post("/api/login", (req, res) => {
     const { mail, name } = req.body;
+    console.log(mail, name);
     const client = Clients.findOne({ mail }).then((data) => {
-      let pass_match = bcrypt.compare(pass_word, data.password);
+    
     
       if(data.name == name){
         res.json({

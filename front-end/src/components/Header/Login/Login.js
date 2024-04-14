@@ -5,7 +5,8 @@ import './Login.css';
 import { useContext } from "react"; //using context api
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { MyContext } from "../../../context/MyContext"
+import { MyContext } from "../../../context/MyContext";
+import baseUrl from '../../../constants/Base';
 
 function Login() {
   const { isLogIn, setLogin } = useContext(MyContext);
@@ -47,10 +48,10 @@ function Login() {
     } else {
       // console.log('Credentials:', credentials);
       axios 
-      .post("http://localhost:4000/api/login", {
+      .post("https://aaccback.onrender.com/api/login", {
         mail : credentials.input ,
         name : credentials.password
-      }).then((res)=> {if(res.status == "success"){
+      }).then((res)=> {if(res.data.status == "Success"){
         showToastSuccessMessage();
         setLogin(true);
       
